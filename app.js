@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 
+
+
 const notFoundMiddleware = require('./middlewares/notFound.middleware')
 const errorHandlerMiddleware = require('./middlewares/errorHandler.middleware')
 // Middleware
