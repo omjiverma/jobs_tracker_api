@@ -12,7 +12,7 @@ async function startServer() {
   try {
     await mongoConnect();
     server.listen(PORT, () => {
-      console.log("Server is listening at ${PORT} ...");
+      console.log(`Server is listening at ${PORT} ...`);
     });
   } catch (error) {
     console.log(error);

@@ -4,7 +4,8 @@ const app = express()
 const notFoundMiddleware = require('./middlewares/notFound.middleware')
 const errorHandlerMiddleware = require('./middlewares/errorHandler.middleware')
 
-const authRouter = require('./routes/auth.routes')
+const authRouter = require('./routes/auth.router')
+const jobsRouter = require('./routes/jobs.router')
 
 
 // Middleware
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/v1/auth',authRouter)
+app.use('/api/v1/jobs',jobsRouter)
 
 // Middleware
 app.use(notFoundMiddleware)
