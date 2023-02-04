@@ -15,7 +15,7 @@ const deleteJob = async (req, res) => {
 };
 
 const showStats = async (req, res) => {
-  res.send("Delete a job");
+  res.send("JOBS STATS");
 };
 
 module.exports = { createJob, getAllJobs, updateJob, deleteJob, showStats };
