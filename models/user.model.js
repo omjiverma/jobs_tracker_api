@@ -26,7 +26,7 @@ const UserSchema = new mongoose.Schema({
   lastName: {
     type: String,
     trim: true,
-    minlength: 3,
+    minlength: 0,
     maxlength: 20,
     default: "",
   },
@@ -35,7 +35,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     trim: true,
     maxlength: 20,
-    default: "20",
+    default: "your location",
   },
 });
 
