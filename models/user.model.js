@@ -41,6 +41,14 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
+UserSchema.methods.toJSON = function() {
+  var obj = this.toObject();
+  delete obj.password;
+  delete obj._id
+  delete obj.__v
+  return obj;
+};
+
 UserSchema.pre("save", async function () {
   const salt = await bcryptjs.genSalt(12);
   this.password = await bcryptjs.hash(this.password, salt);
