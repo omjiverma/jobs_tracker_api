@@ -20,8 +20,16 @@ class NotFoundError extends customAPIError {
   }
 }
 
+class UnauthenticatedError extends customAPIError {
+  constructor(message) {
+    super(message);
+    this.statusCode = StatusCodes.UNAUTHORIZED;
+  }
+}
+
 module.exports = {
   customAPIError,
   BadRequestError,
   NotFoundError,
+  UnauthenticatedError
 };
