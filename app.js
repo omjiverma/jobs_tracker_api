@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 require('express-async-errors');
 
+const userAuthentication = require('./middlewares/authentication.middleware')
 const notFoundMiddleware = require('./middlewares/notFound.middleware')
 const errorHandlerMiddleware = require('./middlewares/errorHandler.middleware')
 
@@ -18,7 +19,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/v1/auth',authRouter)
-app.use('/api/v1/jobs',jobsRouter)
+app.use('/api/v1/jobs',userAuthentication, jobsRouter)
 
 // Middleware
 app.use(notFoundMiddleware)
